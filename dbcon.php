@@ -11,6 +11,6 @@
     }
 
     else{
-        echo"yesss";
+        echo"si funciona la base de datos";
     }
 ?>
