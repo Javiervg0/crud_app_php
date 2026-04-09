@@ -15,6 +15,8 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Age</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,8 @@
                             <td><?php echo $row["first_name"]; ?></td>
                             <td><?php echo $row["last_name"]; ?></td>
                             <td><?php echo $row["age"]; ?></td>
+                            <td><a href="update_page_1.php?id=<?php echo $row['id'] ?>" class="btn btn-success">Update</td>
+                            <td><a href="delete_page.php?id=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</td>
                         </tr>
 
                         <?php
@@ -48,12 +52,19 @@
 if(isset($_GET["message"])) {
     echo "<h6 class='alert alert-danger'>".$_GET["message"]."</h6>";
 }
+?>
 
+<?php 
 if(isset($_GET["insert_msg"])) {
     echo "<h6 class='alert alert-success'>".$_GET["insert_msg"]."</h6>";
 }
 ?>
+<?php 
+if(isset($_GET["delete_msg"])) {
+    echo "<h6 class='alert alert-success'>".$_GET["delete_msg"]."</h6>";
+}
 
+?>
 
         <!-- Modal -->
 <form action="insert_data.php" method="post">         
